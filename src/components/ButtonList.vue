@@ -1,19 +1,18 @@
 <script setup>
-  import OneButton from "@/components/OneButton.vue";
+import OneButton from "@/components/OneButton.vue";
 
-  const buttons = [
-    '7', '8', '9', '/',
-    '4', '5', '6', 'X',
-    '1', '2', '3', '-',
-    '.', '0', '=', '+',
-  ]
+const buttons = [
+  '7', '8', '9', '/',
+  '4', '5', '6', 'X',
+  '1', '2', '3', '-',
+  '.', '0', '=', '+',
+];
 
-  const emit = defineEmits(['onButtonClick'])
+const emit = defineEmits(['onButtonClick']);
 
-  const onButtonClick = (btnValue) => {
-    emit('onButtonClick', btnValue)
-  }
-
+const onButtonClick = (btnValue) => {
+  emit('onButtonClick', btnValue);
+}
 </script>
 
 <template>
@@ -24,6 +23,11 @@
       :btnValue="btnValue"
       @clickButton="onButtonClick"
     />
-    <OneButton @clickButton="onButtonClick" btnValue="C" class="col-span-2"/>
+
+    <OneButton
+      btnValue="C"
+      class="col-span-2"
+      @clickButton="onButtonClick"
+    />
   </div>
 </template>
